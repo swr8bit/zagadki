@@ -1,0 +1,49 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+var AnswerCount=0;
+var noAnswerCount=0;
+
+var userAnswer=prompt("Висит груша- нельзя схавать");
+userAnswer=userAnswer.toLowerCase();
+	
+	if((userAnswer=="лампа")||(userAnswer=="лампочка")){
+		alert("Правильно, "+userAnswer);
+		AnswerCount++;
+	}
+	else{
+		alert("Неверно.")
+		noAnswerCount++;
+	}
+	
+	userAnswer=prompt("Зимой и летом одним цветом");
+	userAnswer=userAnswer.toLowerCase();
+	
+	if((userAnswer=="ель")||(userAnswer=="елка")||(userAnswer=="ёлка")||("саша белый")){
+alert("Правильно, "+userAnswer);
+		AnswerCount++;
+	}else{
+	  alert("Неверно");
+	  noAnswerCount++;
+	}
+	
+userAnswer=prompt("Без окон без дверей полна горница людей");
+	userAnswer=userAnswer.toLowerCase();
+	
+	if((userAnswer=="огурец")||(userAnswer=="огурчик")){
+    alert("Правильно, "+userAnswer);
+		AnswerCount++;
+	}else{
+	  alert("Неверно");
+	  noAnswerCount++;
+	}
+	
+  if(AnswerCount>noAnswerCount){
+    alert("Вы выиграли. количество правильных ответов- "+AnswerCount);
+  }else{
+    alert("Проигрыш. количество правильных ответов- "+AnswerCount);
+  
+  }
+  // alert("Игра окончена. количество правильных ответов- "+AnswerCount)
+
+</script>
