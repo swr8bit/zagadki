@@ -1,0 +1,67 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	
+	var answer=parseInt(Math.random()*100);
+	var maxTryCount=+prompt("Интерактивная игра \"Отгадай число\"\nВведите количество попыток, \"0\" - неограничено.");
+			
+		if(maxTryCount==0){
+				maxTryCount=Infinity;
+		}
+
+	var user1=prompt("Первый игрок, представьтесь");
+	var user2=prompt("Второй игрок, представьтесь");
+
+	var user1Answer=+prompt(user1+", отгадайте число от 1 до 100");
+	var user2Answer=+prompt("Теперь "+user2+" отгадывает число от 1 до 100");
+		
+	for(var tryCount=1;(tryCount<=maxTryCount);tryCount++){
+
+		if(user1Answer*user2Answer==0){
+			break;
+		}
+		if(user1Answer==answer){
+			alert("Поздравляю, "+user1+", вы угадали!");
+			}else if(user1Answer>answer){
+				alert(user1+", вы ввели слишком большое число");
+			}else if(user1Answer<answer){
+				alert(user1+", вы ввели слишком маленькое число");
+
+		}
+	
+		if(tryCount==maxTryCount||user1Answer!=answer){
+			alert(user1+", вы проиграли!");
+		}
+
+		if(user2Answer==answer){
+			alert("Поздравляю, "+user2+", вы угадали!");
+			break;	
+			}else if(user2Answer>answer){
+				alert(user2+", вы ввели слишком большое число");
+			}else if(user2Answer<answer){
+				alert(user2+", вы ввели слишком маленькое число");
+		}
+
+		if(tryCount==maxTryCount||user2Answer!=answer){
+			alert(user2+", вы проиграли!");
+			break;
+		}
+
+		if(maxTryCount!=Infinity){
+			user1Answer=+prompt(user1+" , попробуйте еще раз!\nУ вас осталось "+(maxTryCount-tryCount)+" попыток.\n\"0\" - прервать игру.");
+			user2Answer=+prompt(user1+" , попробуйте еще раз!\nУ вас осталось "+(maxTryCount-tryCount)+" попыток.\n\"0\" - прервать игру.");
+		}else{
+			user1Answer=+prompt(user1+" , попробуйте еще раз!\nУ вас неограниченное количество попыток!\n\"0\" - прервать игру.");
+			user2Answer=+prompt(user2+" , попробуйте еще раз!\nУ вас неограниченное количество попыток!\n\"0\" - прервать игру.");
+		}
+
+	}
+
+			if(user1Answer==0){
+				alert(user1+" решил прервать игру");
+			}else if(user2Answer==0){
+					alert(user2+" решил прервать игру");
+			}
+		
+	alert("Игра окончена.\nЕсли кто не понял, правильный ответ был "+answer);
+
+</script>
