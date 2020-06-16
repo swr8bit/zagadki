@@ -14,18 +14,18 @@
 	var user1Answer=+prompt(user1+", отгадайте число от 1 до 100");
 	var user2Answer=+prompt("Теперь "+user2+" отгадывает число от 1 до 100");
 		
-	for(var tryCount=1;(tryCount<=maxTryCount);tryCount++){
+	for(var tryCount=0;tryCount<maxTryCount;tryCount++){
 
 		if(user1Answer*user2Answer==0){
 			break;
 		}
+		
 		if(user1Answer==answer){
 			alert("Поздравляю, "+user1+", вы угадали!");
 			}else if(user1Answer>answer){
 				alert(user1+", вы ввели слишком большое число");
 			}else if(user1Answer<answer){
 				alert(user1+", вы ввели слишком маленькое число");
-
 		}
 	
 		if(tryCount==maxTryCount||user1Answer!=answer){
@@ -41,9 +41,11 @@
 				alert(user2+", вы ввели слишком маленькое число");
 		}
 
-		if(tryCount==maxTryCount||user2Answer!=answer){
+		if(user2Answer!=answer){
 			alert(user2+", вы проиграли!");
-			break;
+		}
+		if(tryCount==maxTryCount){
+		  break;
 		}
 
 		if(maxTryCount!=Infinity){
@@ -53,14 +55,15 @@
 			user1Answer=+prompt(user1+" , попробуйте еще раз!\nУ вас неограниченное количество попыток!\n\"0\" - прервать игру.");
 			user2Answer=+prompt(user2+" , попробуйте еще раз!\nУ вас неограниченное количество попыток!\n\"0\" - прервать игру.");
 		}
-
-	}
-
-			if(user1Answer==0){
-				alert(user1+" решил прервать игру");
+		if(user1Answer==0){
+			alert(user1+" решил прервать игру");
+			break;
 			}else if(user2Answer==0){
-					alert(user2+" решил прервать игру");
-			}
+				alert(user2+" решил прервать игру");
+				break;
+		}
+		
+	}
 		
 	alert("Игра окончена.\nЕсли кто не понял, правильный ответ был "+answer);
 
