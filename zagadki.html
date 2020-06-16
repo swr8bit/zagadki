@@ -3,7 +3,7 @@
 
 var AnswerCount=0;
 var noAnswerCount=0;
-
+alert("Ну что, поотгадываем загадочки, мазафака?")
 var userAnswer=prompt("Висит груша- нельзя схавать");
 userAnswer=userAnswer.toLowerCase();
 	
@@ -12,7 +12,7 @@ userAnswer=userAnswer.toLowerCase();
 		AnswerCount++;
 	}
 	else{
-		alert("Неверно.")
+		alert(userAnswer+" -это неверный ответ");
 		noAnswerCount++;
 	}
 	
@@ -20,30 +20,30 @@ userAnswer=userAnswer.toLowerCase();
 	userAnswer=userAnswer.toLowerCase();
 	
 	if((userAnswer=="ель")||(userAnswer=="елка")||(userAnswer=="ёлка")||(userAnswer=="саша белый")){
-alert("Правильно, "+userAnswer);
+		alert("Правильно, "+userAnswer);
 		AnswerCount++;
 	}else{
-	  alert("Неверно");
-	  noAnswerCount++;
+		alert(userAnswer+" -это неверный ответ");
+		noAnswerCount++;
 	}
 	
-userAnswer=prompt("Без окон без дверей полна горница людей");
+	userAnswer=prompt("Без окон без дверей полна горница людей");
 	userAnswer=userAnswer.toLowerCase();
 	
 	if((userAnswer=="огурец")||(userAnswer=="огурчик")){
-    alert("Правильно, "+userAnswer);
+    	alert("Правильно, "+userAnswer);
 		AnswerCount++;
 	}else{
-	  alert("Неверно");
-	  noAnswerCount++;
+		alert(userAnswer+" -это неверный ответ");
+		noAnswerCount++;
 	}
 	
-  if(AnswerCount>noAnswerCount){
-    alert("Вы выиграли. количество правильных ответов- "+AnswerCount);
-  }else{
-    alert("Проигрыш. количество правильных ответов- "+AnswerCount);
+	if(AnswerCount>noAnswerCount){
+    	alert("Вы выиграли. количество правильных ответов- "+AnswerCount);
+	}else{
+    	alert("Проигрыш. количество правильных ответов- "+AnswerCount);
   
-  }
-  // alert("Игра окончена. количество правильных ответов- "+AnswerCount)
-
+	}
+	
+ 
 </script>

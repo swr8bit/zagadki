@@ -1,0 +1,68 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	
+	var answer=parseInt(Math.random()*100);
+	var maxTryCount=+prompt("Интерактивная игра \"Отгадай число\"\nВведите число попыток, 0 это неограничено.");
+		do{maxTryCount=Infinity;}
+		while(maxTryCount==0);
+
+	var user1=prompt("Первый игрок, представьтесь");
+	var user2=prompt("Второй игрок, представьтесь");
+	var user1Answer=+prompt(user1+", отгадайте число от 1 до 100");
+	var user2Answer=+prompt("Теперь "+user2+" отгадывает число от 1 до 100");
+	
+	for(var tryCount=1;tryCount<=maxTryCount;tryCount++){
+
+		if(user1Answer==0){
+			alert(user1+" решил прервать игру")
+			break;
+		}
+		else if(user1Answer==answer){
+			alert("Поздравляю, "+user1+", вы угадали!");
+		
+		// continue; - Сразу переходим к следующей итерации
+		}else if(user1Answer>answer){
+			alert(user1+", вы ввели слишком большое число");
+
+		}else if(user1Answer<answer){
+			alert(user1+", вы ввели слишком маленькое число");
+		}
+		if(tryCount==maxTryCount){
+			alert(user1+", вы проиграли!");
+		}
+
+
+		if(user2Answer==0){
+			alert(user2+" решил прервать игру")
+			break;
+		}
+		else if(user2Answer==answer){
+			alert("Поздравляю, "+user2+", вы угадали!");
+		break;
+	
+		}else if(user2Answer>answer){
+			alert(user2+", вы ввели слишком большое число");
+
+		}else if(user2Answer<answer){
+			alert(user2+", вы ввели слишком маленькое число");
+		}
+		if(tryCount==maxTryCount){
+			alert(user2+", вы проиграли!");
+			break;
+		}
+
+		if(maxTryCount==Infinity){
+			user1Answer=+prompt(user1+" , попробуйте еще раз!\nУ вас неограниченное количество попыток\nВведите \"0\" чтобы прервать игру");
+			user2Answer=+prompt(user2+" , попробуйте еще раз!\nУ вас неограниченное количество попыток\nВведите \"0\" чтобы прервать игру");
+		}else{
+			user1Answer=+prompt(user1+" , попробуйте еще раз\nУ вас осталось "+(maxTryCount-tryCount)+" попыток");
+			user2Answer=+prompt(user1+" , попробуйте еще раз\nУ вас осталось "+(maxTryCount-tryCount)+" попыток");
+		}
+			
+	}
+	
+	alert("Игра окончена.\nЕсли кто не понял, правильный ответ был "+answer);
+
+
+
+</script>
