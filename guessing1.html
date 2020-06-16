@@ -41,9 +41,11 @@
 				alert(user2+", вы ввели слишком маленькое число");
 		}
 
-		if(tryCount==maxTryCount||user2Answer!=answer){
+		if(user2Answer!=answer){
 			alert(user2+", вы проиграли!");
-	//		break;
+		}
+		if(tryCount==maxTryCount){
+		  break
 		}
 
 		if(maxTryCount!=Infinity){
