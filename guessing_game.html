@@ -8,13 +8,18 @@
 
 	var user1=prompt("Первый игрок, представьтесь");
 	var user2=prompt("Второй игрок, представьтесь");
-	var user1Answer=+prompt(user1+", отгадайте число от 0 до 100");
-	var user2Answer=+prompt("Теперь "+user2+" отгадывает число от 0 до 100");
+	var user1Answer=+prompt(user1+", отгадайте число от 1 до 100");
+	var user2Answer=+prompt("Теперь "+user2+" отгадывает число от 1 до 100");
 	
 	for(var tryCount=1;tryCount<=maxTryCount;tryCount++){
-		if(user1Answer==answer){
-		alert("Поздравляю, "+user1+", вы угадали!");
-		break;
+
+		if(user1Answer==0){
+			alert(user1+" решил прервать игру")
+			break;
+		}
+		else if(user1Answer==answer){
+			alert("Поздравляю, "+user1+", вы угадали!");
+		
 		// continue; - Сразу переходим к следующей итерации
 		}else if(user1Answer>answer){
 			alert(user1+", вы ввели слишком большое число");
@@ -27,8 +32,12 @@
 		}
 
 
-		if(user2Answer==answer){
-		alert("Поздравляю, "+user2+", вы угадали!");
+		if(user2Answer==0){
+			alert(user2+" решил прервать игру")
+			break;
+		}
+		else if(user2Answer==answer){
+			alert("Поздравляю, "+user2+", вы угадали!");
 		break;
 	
 		}else if(user2Answer>answer){
@@ -43,15 +52,16 @@
 		}
 
 		if(maxTryCount==Infinity){
-			user1Answer=+prompt(user1+" , попробуйте еще раз!\nУ вас неограниченное количество попыток");
-			user2Answer=+prompt(user2+" , попробуйте еще раз!\nУ вас неограниченное количество попыток");
+			user1Answer=+prompt(user1+" , попробуйте еще раз!\nУ вас неограниченное количество попыток\nВведите \"0\" чтобы прервать игру");
+			user2Answer=+prompt(user2+" , попробуйте еще раз!\nУ вас неограниченное количество попыток\nВведите \"0\" чтобы прервать игру");
 		}else{
 			user1Answer=+prompt(user1+" , попробуйте еще раз\nУ вас осталось "+(maxTryCount-tryCount)+" попыток");
 			user2Answer=+prompt(user1+" , попробуйте еще раз\nУ вас осталось "+(maxTryCount-tryCount)+" попыток");
 		}
+			
 	}
 	
-	alert("Если что, правильный ответ был "+answer);
+	alert("Игра окончена.\nЕсли кто не понял, правильный ответ был "+answer);
 
 
 
