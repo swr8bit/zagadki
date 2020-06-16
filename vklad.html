@@ -1,0 +1,17 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+	var rub=+prompt("Введите желаемую сумму вклада в рублях");
+	var percent=+prompt("Укажите проценты годовых");
+	var maxYears=+prompt("Укажите на сколько лет вы хотите сделать вклад");
+	var sum=rub;
+
+	var result='Изменение размера по годам\n'
+	for(years=1;years<=maxYears;years++){
+		sum=sum+(sum*percent/100);
+		result+=years+' год: '+sum.toFixed(2)+' рублей\n';
+		alert("Сумма на счету на конец "+(years)+" года\nсоставит "+sum.toFixed(2)+" руб.");
+	}
+	alert(result);
+	 
+</script>
