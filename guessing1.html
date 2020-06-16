@@ -45,7 +45,7 @@
 			alert(user2+", вы проиграли!");
 		}
 		if(tryCount==maxTryCount){
-		  break
+		  break;
 		}
 
 		if(maxTryCount!=Infinity){
@@ -55,14 +55,15 @@
 			user1Answer=+prompt(user1+" , попробуйте еще раз!\nУ вас неограниченное количество попыток!\n\"0\" - прервать игру.");
 			user2Answer=+prompt(user2+" , попробуйте еще раз!\nУ вас неограниченное количество попыток!\n\"0\" - прервать игру.");
 		}
-
-	}
-
-			if(user1Answer==0){
-				alert(user1+" решил прервать игру");
+		if(user1Answer==0){
+			alert(user1+" решил прервать игру");
+			break;
 			}else if(user2Answer==0){
-					alert(user2+" решил прервать игру");
-			}
+				alert(user2+" решил прервать игру");
+				break;
+		}
+		
+	}
 		
 	alert("Игра окончена.\nЕсли кто не понял, правильный ответ был "+answer);
 
