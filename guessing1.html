@@ -15,12 +15,12 @@
 		
 	while(tryCount<maxTryCount){
 		
-		if(playerNum==maxPlayerNum){
-			tryCount++;
-		}
 
 		if(playerNum==1&&tryCount!=0){
 			alert("Никто не угадал!\nПереход хода к Игроку "+playerNum);
+		}
+		if(playerNum==maxPlayerNum){
+			tryCount++;
 		}
 
 		if(maxTryCount!=Infinity){
