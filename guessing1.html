@@ -11,15 +11,12 @@
 				maxTryCount=Infinity;
 		}
 
-	var tryCount=1;
+	var tryCount=0;
 		
-	while(tryCount<=maxTryCount){
+	while(tryCount<maxTryCount){
 		
-		if(playerNum==maxPlayerNum){
-			tryCount++;
-		}
 
-		if(playerNum==1&&tryCount!=1&&maxPlayerNum!=1){
+		if(playerNum==1&&tryCount!=0&&maxPlayerNum!=1){
 			alert("Никто не угадал!\nПереход хода к Игроку "+playerNum);
 		}
 
@@ -45,6 +42,9 @@
 				alert("Игрок "+playerNum+", вы ввели слишком маленькое число");
 		}
 	
+		if(playerNum==maxPlayerNum){
+			tryCount++;
+		}
 		if(playerNum==maxPlayerNum){
 			playerNum=1;
 		}else{
