@@ -14,7 +14,7 @@
 	var user1Answer=+prompt(user1+", отгадайте число от 1 до 100");
 	var user2Answer=+prompt("Теперь "+user2+" отгадывает число от 1 до 100");
 		
-	for(var tryCount=0;tryCount<maxTryCount;tryCount++){
+	for(var tryCount=1;tryCount<=maxTryCount;tryCount++){
 
 		if(user1Answer*user2Answer==0){
 			break;
@@ -28,7 +28,7 @@
 				alert(user1+", вы ввели слишком маленькое число");
 		}
 	
-		if(tryCount==maxTryCount||user1Answer!=answer){
+		if(tryCount==maxTryCount&&user1Answer!=answer){
 			alert(user1+", вы проиграли!");
 		}
 
@@ -41,7 +41,7 @@
 				alert(user2+", вы ввели слишком маленькое число");
 		}
 
-		if(user2Answer!=answer){
+		if(tryCount==maxTryCount&&user2Answer!=answer){
 			alert(user2+", вы проиграли!");
 		}
 		if(tryCount==maxTryCount){
