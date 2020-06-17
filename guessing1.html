@@ -11,15 +11,15 @@
 				maxTryCount=Infinity;
 		}
 
-	var tryCount=0;
+	var tryCount=1;
 		
-	while(tryCount<maxTryCount){
+	while(tryCount<=maxTryCount){
 		
 		if(playerNum==maxPlayerNum){
 			tryCount++;
 		}
 
-		if(playerNum==1&&tryCount!=0&&maxPlayerNum!=1){
+		if(playerNum==1&&tryCount!=1&&maxPlayerNum!=1){
 			alert("Никто не угадал!\nПереход хода к Игроку "+playerNum);
 		}
 
