@@ -64,12 +64,14 @@
 	alert(generateSeqIntArray(n));//1.a
 	
 	alert("summ="+arraySum(generateSeqIntArray(n)));//1.b
-	
-	alert("max="+getMax(generateRandomNumberArray(n)));//1.c
 
-	alert("min="+getMin(generateRandomNumberArray(n)));//1.d
+	var randArr=generateRandomNumberArray(n)
 
-	alert("четные- "+getEvenNumbs(generateRandomNumberArray(n)));//1.f
+	alert(randArr+"\n max="+getMax(randArr));//1.c
+
+	alert(randArr+"\n min="+getMin(randArr));//1.d
+
+	alert(randArr+"\n четные- "+getEvenNumbs(randArr));//1.f
 
 
 
