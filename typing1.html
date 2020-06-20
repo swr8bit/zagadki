@@ -1,0 +1,47 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	
+	function generateText(letters,length){
+		var text="";
+		for(var i=0;i<length;i++){
+			var n=getRandomNumber(letters.length-1);
+			text=text+letters[n];
+		}
+		return text;
+	}
+	
+	function getRandomNumber(max){
+		return Math.round(Math.random()*max);
+	}
+
+	function task(taskArray){
+		while(true){
+			alert(taskArray[0]);
+			var text=generateText([taskArray[1],taskArray[2]],10);
+			var userText=prompt(text);
+			if(userText==text){
+				alert("Все верно!");
+				break;
+			}else{
+				alert("Вы ошиблисью попробуйте еще раз");
+			}
+		}
+	}
+	
+	
+	var taskMatrix=[["Положите 4 пальца левой руки - мизинец, безымянный, средний и указательный - на клавиши ф, ы, в, а. Зампомните, что буква А находится под вашим указательным пальцем, а Ф под мизинцем.\nТеперь неспеша набирайте текст. Постарайтесь не смотреть на клавиатуру. ",
+		"ф","а"],
+		["Поставьте мизинец левой руки на букву Ф, безымянный палец — на Ы, средний — на В, указательный — на А. Мизинец правой руки на букву Ж, безымянный палец — на Д, средний — на Л, указательный — на О. Запомните расположение пальцев. Повторяйте за мной. ",
+		"ы","в"],
+		["Поставьте мизинец левой руки на букву Ф, безымянный палец — на Ы, средний — на В, указательный — на А. Мизинец правой руки на букву Ж, безымянный палец — на Д, средний — на Л, указательный — на О. Запомните расположение пальцев. ",
+		"о","ж"]];
+
+	alert("Вас приветствует программа обучения слепой печати");
+
+	for(i=0;i<taskMatrix.length;i++){
+		task(taskMatrix[i]);
+	}
+	
+
+
+</script>
