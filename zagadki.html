@@ -1,39 +1,38 @@
 <meta charset="utf-8">
 <script type="text/javascript">
+    function ask(array) {
+        userAnswer = prompt(array[0]);
+        userAnswer = userAnswer.toLowerCase();
+        return (array.includes(userAnswer)); //Проверка есть ли такой элемент в массиве, false/true
+    }
 
+    var userAnswer = "";
+    var AnswerCount = 0;
+    var noAnswerCount = 0;
+    var askMatrix = [
+        ["Висит груша - нельзя схавать", "лампа", "лампочка"],
+        ["Зимой и летом одним цветом", "ель", "елка", "ёлка", "саша белый"],
+        ["Без окон без дверей полна горница людей", "огурец", "огурчик"],
+        ["Туда сюда обратно - тебе и мне приятно", "качели", "качеля"],
+        ["Не лает, не кусает, а в дом не пускает", "замок"]
+    ];
 
-	function ask(array){
-		userAnswer=prompt(array[0]);
-		userAnswer=userAnswer.toLowerCase();
-		return(array.includes(userAnswer));//Проверка есть ли такой элемент в массиве, false/true
-	}
+    alert("Ну что, поотгадываем загадочки, мазафака?");
 
-	var userAnswer="";
-	var AnswerCount=0;
-	var noAnswerCount=0;
-	var askMatrix=[["Висит груша- нельзя схавать","лампа","лампочка"],
-		["Зимой и летом одним цветом","ель","елка","ёлка","саша белый"],
-		["Без окон без дверей полна горница людей","огурец","огурчик"],
-		["Туда сюда обратно - тебе и мне приятно","качели","качеля"]];
+    for (i = 0; i < askMatrix.length; askMatrix.splice(n, 1)) {
+        var n = parseInt(Math.random() * (askMatrix.length - 1));
+        if (ask(askMatrix[n]) == true) {
+            alert("Правильно, " + userAnswer);
+            AnswerCount++;
+        } else {
+            alert(userAnswer + " -это неверный ответ");
+            noAnswerCount++;
+        }
+    }
 
-	alert("Ну что, поотгадываем загадочки, мазафака?");
-	
-	for(i=0;i<askMatrix.length;askMatrix.splice(n,1)){
-		var n=parseInt(Math.random()*(askMatrix.length-1));
-		if(ask(askMatrix[n])==true){
-			alert("Правильно, "+userAnswer);	
-			AnswerCount++;
-		}else{
-			alert(userAnswer+" -это неверный ответ");
-			noAnswerCount++;
-		}
-	}
-		
-	if(AnswerCount>noAnswerCount){
-    	alert("Вы выиграли. количество правильных ответов- "+AnswerCount);
-	}else{
-    	alert("Проигрыш. количество правильных ответов- "+AnswerCount);
-	}
-		
-	 
+    if (AnswerCount > noAnswerCount) {
+        alert("Вы выиграли. количество правильных ответов- " + AnswerCount);
+    } else {
+        alert("Проигрыш. количество правильных ответов- " + AnswerCount);
+    }
 </script>
